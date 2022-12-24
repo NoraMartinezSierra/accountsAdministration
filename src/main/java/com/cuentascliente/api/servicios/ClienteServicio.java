@@ -1,7 +1,7 @@
-package com.accountsAdministration.api.servicios;
+package com.cuentascliente.api.servicios;
 
-import com.accountsAdministration.api.dto.ClienteDto;
-import com.accountsAdministration.api.dto.Response;
+import com.cuentascliente.api.dto.ClienteDto;
+import com.cuentascliente.api.dto.Response;
 import org.springframework.stereotype.Service;
 
 @Service

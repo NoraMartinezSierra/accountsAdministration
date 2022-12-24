@@ -1,4 +1,4 @@
-package com.accountsAdministration.api.entidades;
+package com.cuentascliente.api.entidades;
 
 import javax.persistence.Basic;
 import javax.persistence.Column;

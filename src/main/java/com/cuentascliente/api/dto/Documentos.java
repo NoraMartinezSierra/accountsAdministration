@@ -1,4 +1,4 @@
-package com.accountsAdministration.api.dto;
+package com.cuentascliente.api.dto;
 
 public class Documentos<T> {
     private T datos;
