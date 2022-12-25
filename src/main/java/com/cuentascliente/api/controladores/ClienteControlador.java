@@ -1,7 +1,6 @@
 package com.cuentascliente.api.controladores;
 
-import com.cuentascliente.api.dto.ClienteDto;
-import com.cuentascliente.api.dto.PersonaDto;
+import com.cuentascliente.api.dto.ClienteCuentaDto;
 import com.cuentascliente.api.dto.Response;
 import com.cuentascliente.api.servicios.ClienteServicio;
 import io.swagger.annotations.ApiOperation;
@@ -27,8 +26,14 @@ public class ClienteControlador {
         this.clienteServicio = clienteServicio;
     }
 
+
+    /*
+     * Autor: Nora Ayde Martinez Sierra
+     * fecha: 24/12/22
+     * Recibe un json y guarda la persona, el cliente y la cuenta
+     * */
     @ApiOperation(value = "Queries a list of spending Categories",
-            response = PersonaDto.class)
+            response = Response.class)
     @ApiResponses(value = {
             @ApiResponse(code = 200, message = "OK"),
             @ApiResponse(code = 400, message = "Bad Request")
@@ -37,8 +42,9 @@ public class ClienteControlador {
             consumes = MediaType.APPLICATION_JSON_VALUE,
             produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<Response> getSpendingCategories(
-            @RequestBody() ClienteDto clienteDto) {
-        Response response = clienteServicio.crearCliente(clienteDto);
+            @RequestBody() ClienteCuentaDto clienteCuentaDto) {
+        Response response = clienteServicio.crearClienteCuenta(clienteCuentaDto);
         return ResponseEntity.ok(response);
     }
+
 }

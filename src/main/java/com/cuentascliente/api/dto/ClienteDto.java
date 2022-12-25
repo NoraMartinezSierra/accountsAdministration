@@ -4,7 +4,7 @@ public class ClienteDto extends PersonaDto {
 
     private int clienteid;
     private String contrasena;
-    private Boolean estado;
+    private Boolean estadoCliente;
 
     public int getClienteid() {
         return clienteid;
@@ -22,11 +22,20 @@ public class ClienteDto extends PersonaDto {
         this.contrasena = contrasena;
     }
 
-    public Boolean getEstado() {
-        return estado;
+    public Boolean getEstadoCliente() {
+        return estadoCliente;
     }
 
-    public void setEstado(Boolean estado) {
-        this.estado = estado;
+    public void setEstadoCliente(Boolean estadoCliente) {
+        this.estadoCliente = estadoCliente;
+    }
+
+    @Override
+    public String toString() {
+        return "ClienteDto{" +
+                "clienteid=" + clienteid +
+                ", contrasena='" + contrasena + '\'' +
+                ", estadoCliente=" + estadoCliente +
+                '}';
     }
 }

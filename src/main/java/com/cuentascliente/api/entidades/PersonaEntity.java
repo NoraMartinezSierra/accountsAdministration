@@ -3,6 +3,8 @@ package com.cuentascliente.api.entidades;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.util.Objects;
@@ -19,6 +21,7 @@ public class PersonaEntity {
     private String telefono;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "personaid")
     public int getPersonaid() {
         return personaid;

@@ -65,4 +65,17 @@ public class PersonaDto {
     public void setTelefono(String telefono) {
         this.telefono = telefono;
     }
+
+    @Override
+    public String toString() {
+        return "PersonaDto{" +
+                "personaid=" + personaid +
+                ", nombre='" + nombre + '\'' +
+                ", genero='" + genero + '\'' +
+                ", edad=" + edad +
+                ", identificacion='" + identificacion + '\'' +
+                ", direccion='" + direccion + '\'' +
+                ", telefono='" + telefono + '\'' +
+                '}';
+    }
 }

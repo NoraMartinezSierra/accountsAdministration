@@ -3,8 +3,11 @@ package com.cuentascliente.api.entidades;
 import javax.persistence.Basic;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import java.math.BigDecimal;
 import java.util.Objects;
 
 @Entity
@@ -13,10 +16,12 @@ public class CuentaEntity {
     private int cuentaid;
     private String numerocuenta;
     private String tipocuenta;
-    private String saldoinicial;
+    private BigDecimal saldoinicial;
     private Boolean estado;
+    private Integer clienteId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "cuentaid")
     public int getCuentaid() {
         return cuentaid;
@@ -48,11 +53,11 @@ public class CuentaEntity {
 
     @Basic
     @Column(name = "saldoinicial")
-    public String getSaldoinicial() {
+    public BigDecimal getSaldoinicial() {
         return saldoinicial;
     }
 
-    public void setSaldoinicial(String saldoinicial) {
+    public void setSaldoinicial(BigDecimal saldoinicial) {
         this.saldoinicial = saldoinicial;
     }
 
@@ -66,6 +71,16 @@ public class CuentaEntity {
         this.estado = estado;
     }
 
+    @Basic
+    @Column(name = "clienteid")
+    public Integer getClienteId() {
+        return clienteId;
+    }
+
+    public void setClienteId(Integer clienteId) {
+        this.clienteId = clienteId;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -75,11 +90,12 @@ public class CuentaEntity {
                 Objects.equals(numerocuenta, that.numerocuenta) &&
                 Objects.equals(tipocuenta, that.tipocuenta) &&
                 Objects.equals(saldoinicial, that.saldoinicial) &&
-                Objects.equals(estado, that.estado);
+                Objects.equals(estado, that.estado) &&
+                Objects.equals(clienteId, that.clienteId);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(cuentaid, numerocuenta, tipocuenta, saldoinicial, estado);
+        return Objects.hash(cuentaid, numerocuenta, tipocuenta, saldoinicial, estado, clienteId);
     }
 }
